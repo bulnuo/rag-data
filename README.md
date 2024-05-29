@@ -1,8 +1,8 @@
 PACKAGES
 
-pip install qdrant-client pytest numpy
-pip install transformers
-pip install sentence-transformers
+    pip install qdrant-client pytest numpy
+    pip install transformers
+    pip install sentence-transformers
 
 TESTS
 
@@ -15,17 +15,18 @@ TESTS
 
 QUADRANT
 
-docker pull qdrant/qdrant
-docker run -p 6333:6333 qdrant/qdrant &
-curl http://localhost:6333
+    docker pull qdrant/qdrant
+    docker run -p 6333:6333 qdrant/qdrant &
+    curl http://localhost:6333
 
   
 MILVUS
-pip install pymilvus
-./standalone_embed.sh start
 
-curl http://localhost:2379/health
-docker logs milvus-standalone
-./standalone_embed.sh stop
-./standalone_embed.sh delete
+    pip install pymilvus
+    ./standalone_embed.sh start
+    
+    curl http://localhost:2379/health
+    docker logs milvus-standalone
+    ./standalone_embed.sh stop
+    ./standalone_embed.sh delete
 
